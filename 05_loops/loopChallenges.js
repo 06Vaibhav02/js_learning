@@ -30,21 +30,57 @@ console.log(`Array = ${countdown}`);
 each tea type in array named "teaCollection"
 */
 
-let teaCollection = [];
-let tea; //take tea input from user
+// let teaCollection = [];
+// let tea; //take tea input from user
 
-do {
-    tea = prompt(`Enter your favorite tea so we can add to out db, type stop if you want to stop`);
+// do {
+//     // tea = prompt(`Enter your favorite tea so we can add to out db, type stop if you want to stop`);
 
-    if (tea !== "stop") {
-        teaCollection.push(tea);
-    }
-} while (tea !== "stop"); 
-//check result in browser 
+//     if (tea !== "stop") {
+//         teaCollection.push(tea);
+//     }
+// } while (tea !== "stop"); 
+// //check result in browser 
 
 
 /* 
-4. 
+4. Write a do while loop  that adds numbers from 1 to 3 and stores the result in variable named 'total'
 */
 
+//1+2+3
+let k = 1;
+let total = 0;
+do {
+    total = total + k;
+    k++;
+} while (k <= 3);
+console.log(`Total = ${total}`);
 
+/*
+5. Write a 'for' loop that multiplies  each element in the array [2,4,6] by 2 and store the results in new array named "multipliednumbers"    
+*/
+
+let multipliedNumbers = [];
+let array = [2, 4, 6];
+
+for (let index = 0; index < array.length; index++) {
+    let newNumber = array[index] * 2;
+    multipliedNumbers.push(newNumber);
+}
+// console.log(`New Array = ${multipliedNumbers}`);
+
+/*
+6. Write a 'for' loop that list all the cities in the array '["Paris", "New York", "Tokyo", "London"]' and stores each city in new array 
+named "cityList"
+
+*/
+
+let originalgArray = ["Paris", "New York", "Tokyo", "London"];
+let cityList = [];
+
+for (let index = 0; index < originalgArray.length; index++) {
+    // cityList[index] = originalgArray[index]; method 1
+    cityList.push(originalgArray[index]); //method 2
+}
+
+console.log(`City List = ${cityList}`);
