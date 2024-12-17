@@ -1,0 +1,1 @@
+// filter() : Used to filter array according to condition  //output = array

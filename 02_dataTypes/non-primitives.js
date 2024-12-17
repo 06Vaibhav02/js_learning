@@ -3,7 +3,7 @@
 //Object
 
 const userName = {      //key: value pair
-    "firstName": "VB",
+    "firstName": "VB", 
     "isLoggedIn": false,
 };  
 // here const userName holds reference of object and that reference is fixed, so we can change internal data inspite of being const
