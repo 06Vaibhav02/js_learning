@@ -52,7 +52,7 @@ document.getElementById("removeLastTask").addEventListener("click", function () 
 
 // Solution - 6 : Event Handling in the DOM
 
-document.getElementById("clickMeButton").addEventListener("mouseover", function () {
+document.getElementById("clickMeButton").addEventListener("click", function () { //try mouseover -> click
     alert("You hovered over the button");
     //learn more about event handling from mdn, learn as per usage.
 });
@@ -63,7 +63,7 @@ document.getElementById("teaList").addEventListener("click", function (event) {
     // console.log(event); 
     // console.log(event.target);
 
-    if (event.target && event.target.matches('.teaItem')) {    
+    if (event.target && event.target.matches('.teaItem')) {
         //matches so that only .teaItem elements selected
         // alert(`You selected ${event.target}`); //test
         alert(`You selected ${event.target.textContent}`);
@@ -72,11 +72,39 @@ document.getElementById("teaList").addEventListener("click", function (event) {
 
 // Solution - 8 : Form Handling 
 
-document.getElementById("feedbackForm").addEventListener("submit", function(event){
-    event.preventDefault() //used to prevent the browser from executing the default action of the selected element
+document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+    event.preventDefault() //used to prevent the browser from executing the default action of submitting the form on clicking submit   
+    // console.log(document.getElementById("myLabel"))
+
+    let feedback = document.getElementById("feedbackInput").value
+    // console.log(feedback);
+
+    // let printFeedback = document.getElementById("feedbackDisplay").textContent = `Feedback is: ${feedback}`; //dont use this problem in styling
+    let printFeedback = document.getElementById("feedbackDisplay");
+    printFeedback.textContent = `Feedback is ${feedback}`;
+    printFeedback.style.backgroundColor = "yellow";
+    printFeedback.style.padding = "7px";
+    printFeedback.style.color = "black"
+
+
 })
 
+// Solution - 9 :  DOM Content Loaded
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById("domStatus").textContent = `DOM is fully loaded now`
+})
+// function will run as soon as DOM / webpage is loaded
+
+// Solution - 10 :  CSS Classes Manipulation
+
+document.getElementById("toggleHighlight").addEventListener('click', function () {
+    let descriptionText = document.getElementById("descriptionText")
+    // descriptionText.classList.add("highlight")
+    descriptionText.classList.toggle("highlight");
+
+});
 
 
-// Solution - 9 :
-// Solution - 10 : 
+//Important note: HTMLCollection -- is an array
+//         NodeList -- looks like an array but not an array
