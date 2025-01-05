@@ -1,10 +1,10 @@
+// OOPS is style of writing a code - every language supports it 
+
 // JS is a prototype(extra properties and functionalities for a given datatype) based language
 // But it can be used as a OOP/ class/ object. based language
 
 /* 
     Notes: All JavaScript objects inherit properties and methods from a prototype which is also an object.
-
-
 */
 
 

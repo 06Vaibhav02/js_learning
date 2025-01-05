@@ -106,5 +106,5 @@ document.getElementById("toggleHighlight").addEventListener('click', function ()
 });
 
 
-//Important note: HTMLCollection -- is an array
+//Important note: HTMLCollection -- is not an array
 //         NodeList -- looks like an array but not an array
