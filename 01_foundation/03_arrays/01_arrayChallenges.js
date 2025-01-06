@@ -27,7 +27,6 @@ teaTypes[1] = "jasmine tea";
 // console.log(`Solution 3: ${teaTypes}`);
 
 
-
 /* PUSH METHOD
 4. Declare an array named `citiesVisited` containing `"Mumbai"` and `"Sydney"`. 
 Add `"Berlin"` to the array using the `push` method.
@@ -48,7 +47,7 @@ let lastOrder = teaOrders.pop();
 // console.log(`Solution 5: ${lastOrder}`);
 
 
-/* CREATING SOFT COPY OF AN ARRAY
+/* CREATING SOFT COPY OF AN ARRAY -- behaves same as original
 6. You have an array named `popularTeas` containing `"green tea"`, `"oolong tea"`, and `"chai"`. 
    Create a soft copy of this array named `softCopyTeas`.
 */
@@ -58,7 +57,7 @@ popularTeas.pop();
 // console.log(popularTeas);
 // console.log(softCopyTeas);
 
-/* CREATING SOFT COPY OF AN ARRAY
+/* CREATING HARD COPY OF AN ARRAY -- does not behave same as original
 7. You have an array named `topCities` containing `"Berlin"`, `"Singapore"`, and `"New York"`. 
    Create a hard copy of this array named `hardCopyCities`.
 */
@@ -81,6 +80,16 @@ let asianCities = ["Tokyo", "Bangkok"];
 // let worldCities = [europeanCities,asianCities]; // wrong approch -- will give 2D array
 let worldCities = europeanCities.concat(asianCities); // approach 1 -- only for 2 arrays 
 // console.log(worldCities);
+
+/*
+let topCities = ["Berlin", "Singapore", "New York"];
+let topNames = ["Vaibhav", "Akash", "Kaustubh"]
+let topSurname = ["Patil", "Kankariya", "Magdum"]
+
+let hardCopyCities = [...topCities,...topNames,...topSurname ]; //method 1
+console.log(hardCopyCities)
+*/  // approach 2 -- for multiple arrays
+
 
 
 /* PRINT LENGTH OF AN ARRAY

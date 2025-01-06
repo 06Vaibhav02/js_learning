@@ -65,18 +65,19 @@ let objArray = [
 5. Write a function findLongestWord(arr) that takes an array of strings and returns the longest word using reduce() and an arrow function
 */
 
-const findLongestWord = (arr) => {;
-    return arr.reduce((largest,current) => {
-        if(current.length > largest.length){
+const findLongestWord = (arr) => {
+    ;
+    return arr.reduce((largest, current) => {
+        if (current.length > largest.length) {
             largest = current
         }
-      
+
     }, " ")
 
 };
 let stringArray = ["Vaibhav", "Patil", "Engineering", "Computer"]
 console.log(findLongestWord(stringArray));
 
-// const findLongestWord = (arr) => 
+// const findLongestWord = (arr) =>
 //     arr.reduce((longest, current) => current.length > longest.length ? current : longest, "");
 

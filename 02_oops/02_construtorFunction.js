@@ -1,5 +1,4 @@
 //Capital letter used to name constructor function
-
 console.log(this) // { } ==> global object 
 
 // Constructor, Blueprint

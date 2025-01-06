@@ -2,16 +2,17 @@
     = get an element 
     = event listening
 */
+//made mistake by me - addEventListener will work only on action performed
 
 //Solution - 1 : Accessing DOM Elements
 document.getElementById("changeTextButton").addEventListener('click', function () {
-    //console.log(this) // here this points to button selected, for normal function
+    // console.log(this) // here this points to button selected, for normal function
     let paragraph = document.getElementById("myParagraph");
     paragraph.textContent = "Text is changed due to click"
 });
 
-/* 
-Interview purpose
+
+/* Interview purpose
 document.getElementById("changeTextButton").addEventListener('click', () => { 
     console.log(this) // here this points to window object, for arrow function
 });
@@ -60,8 +61,8 @@ document.getElementById("clickMeButton").addEventListener("click", function () {
 
 // Solution - 7 : Event Delegation
 document.getElementById("teaList").addEventListener("click", function (event) {
-    // console.log(event); 
-    // console.log(event.target);
+    // console.log(event); //pointer event object
+    // console.log(event.target); // li item clicked on
 
     if (event.target && event.target.matches('.teaItem')) {
         //matches so that only .teaItem elements selected
@@ -85,8 +86,6 @@ document.getElementById("feedbackForm").addEventListener("submit", function (eve
     printFeedback.style.backgroundColor = "yellow";
     printFeedback.style.padding = "7px";
     printFeedback.style.color = "black"
-
-
 })
 
 // Solution - 9 :  DOM Content Loaded
@@ -106,5 +105,5 @@ document.getElementById("toggleHighlight").addEventListener('click', function ()
 });
 
 
-//Important note: HTMLCollection -- is not an array
+//Important note: HTMLCollection -- lookd like an array but  not an array
 //         NodeList -- looks like an array but not an array

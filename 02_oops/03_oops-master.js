@@ -1,5 +1,4 @@
 // creating object literal
-
 let car = {
     make: "Toyota",
     model: "Camry",
@@ -50,7 +49,9 @@ let myNewArray = [1, 2, 3, 4, 5, 6]
 // CLASS CREATION -- UNDER THE HOOD THEY ARE STILL PROTOTYPE
 //Note:  function declared inside a class is called a method
 //Note: constuctor method is automatically called when object is created
-//CLASS
+
+
+//CLASS -- it is a syntactic sugar (easy to read and write) for constructor function
 class Vehicle {
     constructor(make, model) {      //constructor takes parameters from arguments recieved in instance creation
         this.make = make;

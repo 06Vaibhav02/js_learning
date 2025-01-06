@@ -1,17 +1,19 @@
 //1. NUMBER
 let score = 120;
-let newScore = new Number(); //not recommended
 // console.log(typeof score);
-// console.log(typeof newScore);
+
 //Note: Every Primitive data can be converted to Non-Primitive
-
-
+let myNumber = new Number(6) //Number() is a constructor and we are creating instance/object of that
+//console.log(typeof myNumber); // object 
+//here myNumber has non-primitive datatype
+//not recommended
 
 //2. BOOLEAN
 let isActive = false;
+// console.log(typeof isActive); //boolean
+
 let isReallyActive = new Boolean(false) //not recommended
-// console.log(typeof isActive);
-// console.log(typeof isReallyActive);
+// console.log(typeof isReallyActive);  //object
 
 //3./4. NULL and UNDEFINED  
 let myName; //undefined -- variable declared but value not assigned
@@ -38,4 +40,5 @@ console.log(demoOne);
 let sm1 = Symbol("Vaibhav");
 let sm2 = Symbol("Vaibhav");
 
-console.log(sm1 == sm2);
+console.log(sm1 === sm2); //false
+

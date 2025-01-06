@@ -25,11 +25,12 @@ if (userNameOne === userNameTwo) {
 
 //3. Check if variable is number or not
 
-// let score = 26;
-let score = '26';
+let score = 26;
+// let score = '26';
 
 if (typeof score === 'number') {
-    // console.log("this is a number");
+    //here typeof score output is number(a string) which we compare with 'number' 
+    // console.log("this is a number"); 
 } else {
     // console.log("this is not a number");
 }

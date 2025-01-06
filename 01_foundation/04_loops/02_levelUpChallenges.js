@@ -11,13 +11,11 @@ for (let i = 0; i < teaArray.length; i++) {
   if (teaArray[i] === "chai") {
     break;
   } else {
-    selectedTeas[i] = teaArray[i];
+    // selectedTeas[i] = teaArray[i];
+    selectedTeas.push(teaArray[i]);
   }
 }
 // console.log(`1. Selected Teas = ${selectedTeas}`);
-
-
-
 
 /* 
 2. Write a `for` loop that loops through the array `["London", "New York", "Paris", "Berlin"]` and skips `"Paris"`. 
@@ -33,7 +31,7 @@ for (let i = 0; i < cityNames.length; i++) {
     continue;
   } else {
     // visitedCities[i] = cityNames[i]; 
-      // dont use this method array, new array will have empty value at skipped position
+    // dont use this method array, new array will have empty value at skipped position
     visitedCities.push(cityNames[i])
   }
 

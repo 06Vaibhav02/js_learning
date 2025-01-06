@@ -7,7 +7,7 @@ function makeTea(typeofTea) {        //parameter
   return `Making ${typeofTea}`;
 }
 let teaOrder = makeTea("green tea"); // argument
-// console.log(teaOrder);  /
+// console.log(teaOrder);  
 
 
 /* 
@@ -24,7 +24,7 @@ function orderTea(teaType) {
 let orderConfirmation = orderTea("chai");
 // console.log(orderConfirmation);
 
-//Read about JS execution context
+//READ ABOUT JS EXECUTION CONTEXT
 
 /* 
 3. Write an arrow function named `calculateTotal` that takes two parameters: `price` and `quantity`. The function should return the total cost by multiplying the `price` and `quantity`. 
@@ -44,9 +44,6 @@ const calculateTotal = (price, quantity) => price * quantity;
 let totalCost = calculateTotal(499, 100);
 // console.log(totalCost);
 
-
-
-
 /*
 4. Write a function named `processTeaOrder` that takes another function, `makeTea`, as a parameter and calls it with the argument `"earl grey"`.
 Return the result of calling `makeTea`.
@@ -60,7 +57,7 @@ function makeTea(teaType) { //teaType => 'earl gray'
 function processTeaOrder(teaFunction) {    //teaFunction => makeTea()
   return teaFunction('earl gray');              // after return from makeTea() - `tea is earl gray`
 };
-let value = processTeaOrder(makeTea);    //after return from processTeaOrder() - `tea is earl graylet `
+let value = processTeaOrder(makeTea);    //after return from processTeaOrder() - `tea is earl gray `
 // console.log(value);
 
 
@@ -76,13 +73,13 @@ function createTeaMaker(name) {
   }
 };
 
-let teaMaker = createTeaMaker("Vaibhav");          
-    //here teaMaker = function(){   }, because createTeaMaker returns a function
+let teaMaker = createTeaMaker("Vaibhav");
+//here teaMaker = function(){   }, because createTeaMaker returns a function
 let result = teaMaker('green tea');        //executing teaMaker
 console.log(result);
 
 // READ ABOUT CLOSURES
 
 //note: 'this' sets the context of block of code
-//analog - influencer(my fans have come) | electrician(my fans have come)  
+//analogy - influencer(my fans have come) | electrician(my fans have come)  
 //this can be used for both normal and arrow function but has less functionality for arrow function hence not used 
