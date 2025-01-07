@@ -2,7 +2,7 @@
 console.log(this) // { } ==> global object 
 
 // Constructor, Blueprint
-function Car(make,model){
+function Car(make, model) {
     this.make = make;                  //this.make => own defined variable, make => parameter      
     this.model = model;
 }
@@ -14,7 +14,7 @@ function Car(make,model){
 
 let firstCar = new Car("Tata", "Safari");
 // console.log(firstCar);            //printed as object with properties from constructor function
- 
+
 
 let secondCar = new Car("Toyota", "Camry");
 // console.log(secondCar);
@@ -33,9 +33,9 @@ let secondCar = new Car("Toyota", "Camry");
 // console.log(lemonTea);
 // // console.log(lemonTea.describe());
 
-function Tea(teaType){
+function Tea(teaType) {
     this.teaType = teaType;
-    this.describe = function(){
+    this.describe = function () {
         return `This is a ${this.teaType}`
     }
 }
@@ -44,27 +44,33 @@ let lemonTea = new Tea("lemon tea");
 // console.log(lemonTea);
 // console.log(lemonTea.describe());
 
-function Animal(species){
+function Animal(species) {
     this.species = species;
 }
 
-Animal.prototype.sound = function(){
-    return `${this.species} makes a sound`; 
+//adding to Animal prototype (adding to animal object), so that objects whose prototype is Animal can have access to it
+Animal.prototype.sound = function () {
+    return `${this.species} makes a sound`;
 }
+Animal.prototype.height = 26
+
 
 let dog = new Animal('dog');
-console.log(dog);
-console.log(dog.sound());
+// console.log(dog);
+// console.log(dog.sound());
+console.log(dog.height);
 
 //Error checking
 
-function Drink(name){
-    if(!new.target){            //target == tea, coffee
-        throw new Error("Please add new keyword");
+function Drink(name) {
+    if (!new.target) {            //target == tea, coffee
+        throw new Error("Please add new keyword");   //here Error() is also a constructor with properties 
     }
     this.name = name;
 }
 
-let tea = new Drink('tea');     
+let tea = new Drink('tea');
 let coffee = new Drink('coffee');
+
+
 

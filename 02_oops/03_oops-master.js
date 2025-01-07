@@ -6,19 +6,18 @@ let car = {
     start: function () {
         return `${this.make} was made in year ${this.year}`;
     }
-
-}
+}//here this points to car = {}
 // console.log(car.start()); 
 // but cannot make copies of this object - so we use constructor function
 
-//Class 
+//constructor function //a prototype
 function Person(name, age) {
     this.name = name;
     this.age = age;
 }
-
 //Object, Instance  
 let vaibhav = new Person("vaibhav patil", 27);
+// console.log(typeof vaibhav)
 // console.log(vaibhav)
 // console.log(vaibhav.name) //this tells which name to print
 
@@ -48,7 +47,7 @@ let myNewArray = [1, 2, 3, 4, 5, 6]
 // -------------------------------------------------------------------------------------------------------------------------------------------------
 // CLASS CREATION -- UNDER THE HOOD THEY ARE STILL PROTOTYPE
 //Note:  function declared inside a class is called a method
-//Note: constuctor method is automatically called when object is created
+//Note: constuctor method is automatically called when object is created, if constructor function not defined empty constructor function added
 
 
 //CLASS -- it is a syntactic sugar (easy to read and write) for constructor function
@@ -62,7 +61,7 @@ class Vehicle {
     }
 }
 
-// INHERITANCE
+//CONCEPT ---- INHERITANCE
 //Car inherits properties [ constructor(), make, model, start()] from Vehicle
 class Car extends Vehicle {       //Car is a new class
     drive() {
@@ -80,7 +79,7 @@ let myCar = new Car("Tata", "Safari"); //arguments sent to constructor
 // console.log(vehicleOne.make)
 
 
-// ENCAPSULATION -- restricting direct access to object data, we cannot use encapsulated data outside of class or in instance
+//CONCEPT ---- ENCAPSULATION -- restricting direct access to object data, we cannot use encapsulated data outside of class or in instance
 
 class BankAccount {
     #balance = 0;  //encapsulation 
@@ -101,7 +100,7 @@ accountOne.deposit(100);
 // console.log(accountOne.getBalance());
 
 
-// ABSTRACTION -- hiding complex implementation details 
+//CONCEPT ---- ABSTRACTION -- hiding complex implementation details 
 
 class CoffeeMachine {
     start() {
@@ -130,7 +129,7 @@ let myMachine = new CoffeeMachine()
 // console.log(myMachine.pressStartButton())     //start() , brewing() -- hidden
 
 
-// Polymorphism -- many forms -- same function with different signatures
+//CONCEPT ---- POLYMORPHISM -- many forms -- same function with different signatures
 //Two types : 
 // 1.  Method Overriding: child class overides method of parent class
 // 2. Method Overloading(simulated):
@@ -151,9 +150,10 @@ let sparrow = new Bird()
 let penguin = new Penguin()
 
 // console.log(sparrow.fly());
+// console.log(penguin.fly());
 
 
-// STATIC METHOD -- this method can only be called by class itself -- intances of the class cannot call this function
+//CONCEPT ----  STATIC METHOD -- this method can only be called by class itself -- intances/objects of the class cannot call this function
 
 class Calculator {
     static add(a, b) {
@@ -162,13 +162,14 @@ class Calculator {
 }
 
 // let calciOne = new Calculator();
-// console.log(calciOne.add(4,5));    // cannot be called by an instance -- will give error
+// console.log(calciOne.add(4,5));   // cannot be called by an instance -- will give error
 
 // console.log(Calculator.add(4, 5)) //can only be called by class itself
 
 
-// GETTERS , SETTERS   use '_'
+//-------------------------------------------------------------------------------------------------------------------------------------
 
+//CONCEPT ----  GETTERS , SETTERS   use '_'
 class Employee {
     #salary; //encapsulation
     constructor(name, salary) {
@@ -180,7 +181,7 @@ class Employee {
     }
 
     get salary() {
-        return `You are not allowed to see salary ${this.#salary}`;
+        return `You are not allowed to see salary still have it -  ${this.#salary}`;
     }
 
     set salary(value) {
@@ -192,7 +193,8 @@ class Employee {
     }
 }
 let emp = new Employee("Alice", 50000);
-console.log(emp.salary);        //getting salary
+console.log(emp.salary);        //getting salary //5000
 
 emp.salary = 60000;            //setting salary
-console.log(emp.salary);       //getting salary
+console.log(emp.salary);       //getting salary //6000
+
