@@ -1,0 +1,86 @@
+GIT Basics
+git init      
+	// creates hidden folder .git which stores all git data , commits
+git status
+git add . 
+git add <filename>
+git commit -m ""                 
+	// if message not added a WIN editor opened which is not good, so we configured it to Vscode --> stored in .git
+git config --global core.editor "code --wait".
+git config --global user.name "Vaibhav Patil" 
+git config --global user.email " " 
+	// all above files to stored in .gitconfig  // go to root system folder and check  --> PS C:\Users\Vaibhav> cat .gitconfig	
+git log 
+git log --oneline
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+git branch  
+	// * master                     
+	//* is a pointer         
+	//head points to master branch 
+
+git branch <branchname>                
+	//adding a branch                     
+
+git checkout <branchname>             
+	//change pointer       
+	//head points to <branchname>
+	//Head file in .git changed
+
+//head points to latest commit in any branch // its like checkpoints in game
+
+git checkout -b <branchname>   // create and point to branch in oneline command
+
+
+Merging
+// you need to be on the branch into which you want to merge // example head should point to master before merge
+
+git merge <branchname> 
+git branch -d <branchname>   //good practice to delete merge branch
+
+Git conflicts
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Git diff
+git diff --staged 45454..48484
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Git stash
+//when you try to switch branch without commit.
+//stash saves uncommitted data to temporarily.
+//stash can be moved from one branch to another. //try git stash pop in another branch
+
+git stash //push to stash
+git stash pop //all pop
+git stash list //list of stash  
+git stash apply stash@{0} //selective pop
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Git rebase -- be cautious 
+// if you are main branch do not run this command
+
+git rebase master 
+
+//never rebase commits shared with other people
+//pushed to GitHub never rebase
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------git pull request - for open source contribution
+step 1: fork the project - bring copy of project into your own account 
+step 2: clone the project - into your local system
+step 3: make changes - add - commit - on another branch
+step 4: push the branch to origin
+step 5: open GitHub and select compare and pull request
+
+
+
+
+
+git remote -v == check repository for check 
+git remote add origin "url"
+git push -u origin <branchname>
+
+git clone "url"
+
+
+
+
+

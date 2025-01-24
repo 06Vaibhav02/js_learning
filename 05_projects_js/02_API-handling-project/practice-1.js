@@ -12,6 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
     getWeatherBtn.addEventListener("click", () => {
         const city = cityInput.value.trim();
         if (!city) return;
+        
+        //a web request to server
+            // 1. Server/DB may throw error 
+            // 2.Server/DB is in another continent 
+            //      -- means it is going to take some time
+            
+        try {
+            
+        } catch (error) {
+            showError()
+        }
+        
+        
     })
 
 
@@ -24,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function showError() {
-        weatherInfo.classList.add("hidden")
-        errorMessage.classList.remove("hidden")
+        weatherInfo.classList.add("hidden")             //make weather info hidden 
+        errorMessage.classList.remove("hidden")         //show error message
     }
 
 
