@@ -151,15 +151,16 @@ for (const city in worldCities) {
 
 let teaTypes = ["earl grey", "green tea", "chai", "oolong tea"];
 let availableTeas = []
+// we cannot use break and continue inside foreach loop
 
-teaTypes.forEach(function(tea){
-    if( tea === "chai" ){
-      return false;
-    }
-    else{
-      availableTeas.push(tea)
-      return true;
-    }
+teaTypes.forEach(function (tea) {
+  if (tea === "chai") {
+    return false;
+  }
+  else {
+    availableTeas.push(tea)
+    return true; 
+  }
 });
 // console.log(availableTeas);
 
@@ -185,14 +186,14 @@ console.log(availableTeas)
 let myCities = ["Berlin", "Tokyo", "Sydney", "Paris"];
 let traveledCities = []
 
-myCities.forEach(function(city){
-    if( city === "Sydney" ){
-      return false;
-    }
-    else{
-      traveledCities.push(city)
-      return true;
-    }
+myCities.forEach(function (city) {
+  if (city === "Sydney") {
+    return false;
+  }
+  else {
+    traveledCities.push(city)
+    return true;
+  }
 });
 // each array element is passed through FUNCTION independently so break wont work
 // For loop it will work cause whole array passes at a time
@@ -206,13 +207,13 @@ let myNumArray = [2, 5, 7, 9];
 let doubledNumbers = []
 
 for (let i = 0; i < myNumArray.length; i++) {
-  if( myNumArray[i] === 7 ){
+  if (myNumArray[i] === 7) {
     continue;
   }
-  else{
-      doubledNumbers.push((myNumArray[i]*2))
+  else {
+    doubledNumbers.push((myNumArray[i] * 2))
   }
-  
+
 }
 // console.log(doubledNumbers)
 
@@ -225,9 +226,9 @@ for (let i = 0; i < myNumArray.length; i++) {
 let newTeaArray = ["chai", "green tea", "black tea", "jasmine tea", "herbal tea"];
 let shortTeas = [];
 for (const tea of newTeaArray) {
-  if( tea.length > 10){
+  if (tea.length > 10) {
     break;
-  }else{
+  } else {
     shortTeas.push(tea)
   }
 }
