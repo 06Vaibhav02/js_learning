@@ -10,8 +10,9 @@ Objects are created without defining a class, and inherit properties and methods
 */
 /*
 Object-oriented programming
-Objects are created using classes, and extend child classes to inherit properties and methods. OOP relies on a formal class hierarchy, and is well-suited to testing and debugging
+Objects are created using classes, and extend child classes to inherit properties and methods. OOP relies on a formal class hierarchy, and is well-suited to testing and debugging 
 */
+/* JS is prototype based cause each object inherits prototype */
 
 let computer = { cpu: 12 };
 
@@ -70,6 +71,11 @@ p1["age"] = 26
 const p3 = Object.create(p1)
 
 console.log("XXXXXXXXXXXX", Object.getPrototypeOf(p3))
+
+//Prototype of player == universal prototype
+//Prototype of p1,p2 == player
+//Prototype of p3 == p1
+
 
 
 

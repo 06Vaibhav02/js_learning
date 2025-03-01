@@ -48,7 +48,8 @@ function Animal(species) {
     this.species = species;
 }
 
-//adding to Animal prototype (adding to animal object), so that objects whose prototype is Animal can have access to it
+//adding to Animal function, so that objects whose prototype is Animal can have access to it // can only be done for function , does not work for object to object+
+
 Animal.prototype.sound = function () {
     return `${this.species} makes a sound`;
 }
@@ -69,7 +70,7 @@ function Drink(name) {
     this.name = name;
 }
 
-let tea = new Drink('tea');
+let tea =  Drink('tea');
 let coffee = new Drink('coffee');
 
 

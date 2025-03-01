@@ -48,7 +48,7 @@ let myNewArray = [1, 2, 3, 4, 5, 6]
 // CLASS CREATION -- UNDER THE HOOD THEY ARE STILL PROTOTYPE
 //Note:  function declared inside a class is called a method
 //Note: constuctor method is automatically called when object is created, if constructor function not defined empty constructor function added
-
+//in constructor method we need to add this for everthing
 
 //CLASS -- it is a syntactic sugar (easy to read and write) for constructor function
 class Vehicle {
@@ -80,7 +80,7 @@ let myCar = new Car("Tata", "Safari"); //arguments sent to constructor
 
 
 //CONCEPT ---- ENCAPSULATION -- restricting direct access to object data, we cannot use encapsulated data outside of class or in instance
-
+// balance can only be printed if its done in class itself - instance cannot be used to call it
 class BankAccount {
     #balance = 0;  //encapsulation 
 
@@ -129,10 +129,10 @@ let myMachine = new CoffeeMachine()
 // console.log(myMachine.pressStartButton())     //start() , brewing() -- hidden
 
 
-//CONCEPT ---- POLYMORPHISM -- many forms -- same function with different signatures
+//CONCEPT ---- POLYMORPHISM -- many forms -- same function with different signatures in same class or in (parent-child) classes
 //Two types : 
-// 1.  Method Overriding: child class overides method of parent class
-// 2. Method Overloading(simulated):
+// 1.  Method Overriding: child class overides method of parent class (in parent - child)
+// 2. Method Overloading(simulated): (same class)
 
 class Bird {
     fly() {
@@ -151,6 +151,19 @@ let penguin = new Penguin()
 
 // console.log(sparrow.fly());
 // console.log(penguin.fly());
+
+class Calculator {
+    add(a, b) {
+        if (b === undefined) {
+            return a + a;
+        }
+        return a + b;
+    }
+}// Method Overloading can only be, simulated in js 
+const calc = new Calculator();
+console.log(calc.add(2));
+console.log(calc.add(2, 3));
+//add() behaves differently depending on the arguments passed
 
 
 //CONCEPT ----  STATIC METHOD -- this method can only be called by class itself -- intances/objects of the class cannot call this function
@@ -171,24 +184,25 @@ class Calculator {
 
 //CONCEPT ----  GETTERS , SETTERS   use '_'
 class Employee {
-    #salary; //encapsulation
+
     constructor(name, salary) {
+
         if (salary < 0) {
             throw new Error("Salary cannot be in negative");
         }
         this.name = name;
-        this.#salary = salary;
+        this._salary = salary;
     }
 
     get salary() {
-        return `You are not allowed to see salary still have it -  ${this.#salary}`;
+        return `You are not allowed to see salary still have it -  ${this._salary}`;
     }
 
     set salary(value) {
         if (value < 0) {
             console.error("Invalid Salary");
         } else {
-            this.#salary = value;
+            this._salary = value;
         }
     }
 }

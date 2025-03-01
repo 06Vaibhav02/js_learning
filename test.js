@@ -1,14 +1,14 @@
-function removeDuplicates(inputArray){
-    let newArray = []
-    for (const element of inputArray) {
-        
+let person = {
+    name: "Vaibhav",
+    greet() {
+        return `Hello my name is ${this.name}` //this set context to person properties
     }
-
-
-
 }
 
-let array = [1,2,3,2,4,3,5,4,6]
-console.log(removeDuplicates(array))
+console.log(person.greet()) 
 
+// let getFunction = person.greet 
+// console.log(getFunction())
 
+let getFunction = person.greet()
+console.log(getFunction)

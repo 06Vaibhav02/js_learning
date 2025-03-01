@@ -11,6 +11,11 @@ setTimeout(() => {
 }, 5000);       
     //async nature -- inspite of being before for() it is executed later after 5s        
 
-for (let index = 0; index < 10; index++) {
-    console.log(index);
+// for (let index = 0; index < 10; index++) {
+//     console.log(index);
+// }
+
+function sayHelloOnTime() {
+
+    return `I am printed on time`
 }
